@@ -1,3 +1,6 @@
+/// <reference path='../../typings/lodash/lodash.d.ts'/>
+/// <reference path='../../typings/redux-actions/redux-actions.d.ts'/>
+
 import { assign } from 'lodash';
 import { handleActions, Action } from 'redux-actions';
 

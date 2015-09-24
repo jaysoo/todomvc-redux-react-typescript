@@ -2,8 +2,6 @@
 /// <reference path='../typings/redux-actions/redux-actions.d.ts'/>
 /// <reference path='../typings/redux/redux.d.ts'/>
 /// <reference path='../typings/react-redux/react-redux.d.ts'/>
-/// <reference path='../typings/classnames/classnames.d.ts'/>
-/// <reference path='../typings/lodash/lodash.d.ts'/>
 
 import * as React from 'react';
 
