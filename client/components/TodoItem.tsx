@@ -6,8 +6,7 @@ import TodoTextInput from './TodoTextInput.tsx';
 type Todo = {
 	id: number;
 	text: string,
-	completed: boolean
-  key?: any;
+	completed?: boolean
 };
 
 interface TodoItemProps {

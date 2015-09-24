@@ -1,25 +1,50 @@
-import * as types from '../constants/ActionTypes.ts';
+/// <reference path='../../typings/redux-actions/redux-actions.d.ts'/>
 
-export function addTodo(text) {
-  return { type: types.ADD_TODO, text };
+import { createAction, Action } from 'redux-actions';
+
+import * as types from '../constants/ActionTypes';
+
+type Todo = {
+  text?: string;
+  id?: number;
+  completed?: boolean;
 }
 
-export function deleteTodo(id) {
-  return { type: types.DELETE_TODO, id };
-}
+const addTodo = createAction<Todo>(
+  types.ADD_TODO,
+  (text: string) => ({ text })
+);
 
-export function editTodo(id, text) {
-  return { type: types.EDIT_TODO, id, text };
-}
+const deleteTodo = createAction<Todo>(
+  types.DELETE_TODO,
+  (id: number) => ({ id })
+);
 
-export function completeTodo(id) {
-  return { type: types.COMPLETE_TODO, id };
-}
+const editTodo = createAction<Todo>(
+  types.EDIT_TODO,
+  (id: number, text: string) => ({ id, text })
+);
 
-export function completeAll() {
-  return { type: types.COMPLETE_ALL };
-}
+const completeTodo = createAction<Todo>(
+  types.COMPLETE_TODO,
+  (id: number) => ({ id })
+)
 
-export function clearCompleted() {
-  return { type: types.CLEAR_COMPLETED };
+const completeAll = createAction<void>(
+  types.COMPLETE_ALL,
+  () => {}
+)
+
+const clearCompleted = createAction<void>(
+  types.CLEAR_COMPLETED,
+  () => {}
+);
+
+export {
+  addTodo,
+  deleteTodo,
+  editTodo,
+  completeTodo,
+  completeAll,
+  clearCompleted
 }
