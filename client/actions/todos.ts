@@ -2,13 +2,8 @@
 
 import { createAction, Action } from 'redux-actions';
 
+import { Todo } from '../reducers/todos';
 import * as types from '../constants/ActionTypes';
-
-type Todo = {
-  text?: string;
-  id?: number;
-  completed?: boolean;
-}
 
 const addTodo = createAction<Todo>(
   types.ADD_TODO,

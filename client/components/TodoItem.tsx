@@ -4,13 +4,8 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
+import { Todo } from '../reducers/todos';
 import TodoTextInput from './TodoTextInput';
-
-type Todo = {
-	id: number;
-	text: string,
-	completed?: boolean
-};
 
 interface TodoItemProps {
   todo: Todo;

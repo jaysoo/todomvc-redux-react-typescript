@@ -4,9 +4,9 @@ import * as React from 'react';
 import * as classNames from 'classnames';
 
 import {
-	SHOW_ALL,
-	SHOW_COMPLETED,
-	SHOW_ACTIVE
+  SHOW_ALL,
+  SHOW_COMPLETED,
+  SHOW_ACTIVE
 } from '../constants/TodoFilters';
 
 const FILTER_TITLES = {

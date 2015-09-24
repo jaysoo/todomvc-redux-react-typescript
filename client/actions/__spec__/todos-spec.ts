@@ -4,12 +4,6 @@ import { expect } from 'chai';
 
 import * as TodoActions from '../todos';
 
-type Todo = {
-  text?: string;
-  id?: number;
-  completed?: boolean;
-}
-
 describe('TodoActions', () => {
   it('creates new todo', () => {
     const { payload: todo } = TodoActions.addTodo('hello');
