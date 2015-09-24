@@ -1,4 +1,5 @@
 import { assign } from 'lodash';
+import { handleActions, Action } from 'redux-actions';
 
 import {
   ADD_TODO,
@@ -7,7 +8,7 @@ import {
   COMPLETE_TODO,
   COMPLETE_ALL,
   CLEAR_COMPLETED
-} from '../constants/ActionTypes.ts';
+} from '../constants/ActionTypes';
 
 const initialState = [{
   text: 'Use Redux with TypeScript',
@@ -15,44 +16,51 @@ const initialState = [{
   id: 0
 }];
 
-export function todos(state: any = initialState, action: any = null): any {
-  switch (action.type) {
-  case ADD_TODO:
+export type Todo = {
+  text?: string;
+  id?: number;
+  completed?: boolean;
+};
+
+export default handleActions<Todo[]>({
+  [ADD_TODO]: (state: Todo[], action: Action) => {
     return [{
       id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
       completed: false,
-      text: action.text
+      text: action.payload.text
     }, ...state];
-
-  case DELETE_TODO:
+  },
+  
+  [DELETE_TODO]: (state: Todo[], action: Action) => {
     return state.filter(todo =>
-      todo.id !== action.id
+      todo.id !== action.payload.id
     );
-
-  case EDIT_TODO:
+  },
+  
+  [EDIT_TODO]: (state: Todo[], action: Action) => {
     return state.map(todo =>
-      todo.id === action.id ?
-        assign({}, todo, { text: action.text }) :
+      todo.id === action.payload.id ?
+        assign({}, todo, { text: action.payload.text }) :
         todo
     );
-
-  case COMPLETE_TODO:
+  },
+  
+  [COMPLETE_TODO]: (state: Todo[], action: Action) => {
     return state.map(todo =>
-      todo.id === action.id ?
+      todo.id === action.payload.id ?
         assign({}, todo, { completed: !todo.completed }) :
         todo
     );
-
-  case COMPLETE_ALL:
+  },
+  
+  [COMPLETE_ALL]: (state: Todo[], action: Action) => {
     const areAllMarked = state.every(todo => todo.completed);
     return state.map(todo => assign({}, todo, {
       completed: !areAllMarked
     }));
+  },
 
-  case CLEAR_COMPLETED:
+  [CLEAR_COMPLETED]: (state: Todo[], action: Action) => {
     return state.filter(todo => todo.completed === false);
-
-  default:
-    return state;
   }
-}
+});
