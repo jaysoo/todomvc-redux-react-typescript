@@ -2,7 +2,7 @@
 
 import { createAction, Action } from 'redux-actions';
 
-import * as types from '../constants/ActionTypes';
+import * as types from '../constants/ActionTypes.ts';
 
 type Todo = {
   text?: string;

@@ -8,7 +8,7 @@ import {
   COMPLETE_TODO,
   COMPLETE_ALL,
   CLEAR_COMPLETED
-} from '../constants/ActionTypes';
+} from '../constants/ActionTypes.ts';
 
 const initialState = [{
   text: 'Use Redux with TypeScript',
@@ -63,4 +63,4 @@ export default handleActions<Todo[]>({
   [CLEAR_COMPLETED]: (state: Todo[], action: Action) => {
     return state.filter(todo => todo.completed === false);
   }
-});
+}, initialState);
