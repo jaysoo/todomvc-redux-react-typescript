@@ -9,8 +9,8 @@
   "scripts": {
     "dev-server": "node webpack/dev-server.js",
     "build": "NODE_ENV=production webpack --config webpack/webpack-production.config.js --progress --profile --colors",
-    "start-dev": "node lib/server-development",
-    "start": "node lib/server-production",
+    "start-dev": "node server/development",
+    "start": "node server/production",
     "test": "./node_modules/.bin/tsc && ./node_modules/.bin/mocha  --require test-setup --recursive ./dist/**/__spec__/**/*-spec.js"
   },
   "author": "Jack Hsu <jack.hsu@gmail.com>",
