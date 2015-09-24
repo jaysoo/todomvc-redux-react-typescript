@@ -1,9 +1,15 @@
 {
-	"files.exclude": {
-		"dist": true
-	},
-	
-	"search.exclude": {
-		"dist": true
-	}
+  "files.exclude": {
+    "build" : true,
+    "dist": true,
+    "tmp" : true
+  },
+  "search.exclude": {
+    ".git" : true,
+    ".idea": true,
+    "node_modules" : true,
+    "build" : true,
+    "dist" : true,
+    "tmp" : true
+  }
 }
