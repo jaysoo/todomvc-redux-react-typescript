@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 
-import { Todo } from '../reducers/todos';
+import { Todo } from '../models/todos';
 import TodoItem from './TodoItem';
 import Footer from './Footer';
 import {

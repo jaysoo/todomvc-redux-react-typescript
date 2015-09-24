@@ -2,7 +2,7 @@
 
 import { createAction, Action } from 'redux-actions';
 
-import { Todo } from '../reducers/todos';
+import { Todo } from '../models/todos';
 import * as types from '../constants/ActionTypes';
 
 const addTodo = createAction<Todo>(

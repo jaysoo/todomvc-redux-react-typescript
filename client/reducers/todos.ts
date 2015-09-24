@@ -4,6 +4,7 @@
 import { assign } from 'lodash';
 import { handleActions, Action } from 'redux-actions';
 
+import { Todo } from '../models/todos';
 import {
   ADD_TODO,
   DELETE_TODO,
@@ -18,12 +19,6 @@ const initialState = [{
   completed: false,
   id: 0
 }];
-
-export type Todo = {
-  text?: string;
-  id?: number;
-  completed?: boolean;
-};
 
 export default handleActions<Todo[]>({
   [ADD_TODO]: (state: Todo[], action: Action) => {

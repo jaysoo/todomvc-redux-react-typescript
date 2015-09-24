@@ -4,7 +4,7 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-import { Todo } from '../reducers/todos';
+import { Todo } from '../models/todos';
 import TodoTextInput from './TodoTextInput';
 
 interface TodoItemProps {
