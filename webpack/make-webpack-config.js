@@ -11,18 +11,18 @@ module.exports = function(options) {
     entry = [
       'webpack-dev-server/client?http://0.0.0.0:2992',
       'webpack/hot/only-dev-server',
-      './client/index'
+      './todos/index'
     ];
   } else {
-    entry = [
-      './client/index'
-    ];
+    entry = {
+      todos: './todos/index'
+    }
   }
 
   var loaders = {
     "js": {
       loaders: options.development ? ["react-hot", "babel-loader?stage=1"] : ["babel-loader?stage=1"],
-      include: path.join(__dirname, "..", "client")
+      include: path.join(__dirname, "..", "todos")
     },
     "ts|tsx": {
       loaders: ['ts-loader']
@@ -57,7 +57,9 @@ module.exports = function(options) {
 
   if(options.separateStylesheet) {
     plugins = plugins.concat([
-      new ExtractTextPlugin("[name].css" + (options.longTermCaching ? "?[contenthash]" : ""))
+      new ExtractTextPlugin("[name].css", {
+        allChunks: true
+      })
     ]);
   }
 
@@ -104,12 +106,11 @@ module.exports = function(options) {
     output: {
       path: path.join(__dirname, "..", "build", options.development ? "development" : "public"),
       publicPath: publicPath,
-      filename: "[name].js" + (options.longTermCaching ? "?[chunkhash]" : ""),
-      chunkFilename: (options.development ? "[id].js" : "[name].js") + (options.longTermCaching ? "?[chunkhash]" : ""),
+      filename: "[name].js",
+      chunkFilename: "[id].js",
       sourceMapFilename: "debugging/[file].map",
       pathinfo: options.debug
     },
-
     target: 'web',
     module: {
       loaders: loadersByExtension(loaders).concat(loadersByExtension(stylesheetLoaders))
