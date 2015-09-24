@@ -8,7 +8,7 @@ import {
   COMPLETE_TODO,
   COMPLETE_ALL,
   CLEAR_COMPLETED
-} from '../constants/ActionTypes.ts';
+} from '../constants/ActionTypes';
 
 const initialState = [{
   text: 'Use Redux with TypeScript',

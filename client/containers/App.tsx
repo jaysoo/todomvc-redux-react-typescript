@@ -3,12 +3,12 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as React from 'react';
 
-import Header from '../components/Header.tsx';
-import MainSection from '../components/MainSection.tsx';
-import * as TodoActions from '../actions/todos.ts';
+import Header from '../components/Header';
+import MainSection from '../components/MainSection';
+import * as TodoActions from '../actions/todos';
 
 // It would be nice to specify an AppProps interface for this component, but it
-// does not play nicely with the {() => <App/>} usage in main.tsx.
+// does not play nicely with the {() => <App/>} usage in main.
 class App extends React.Component<any, any> {
   render() {
     const { todos, dispatch } = this.props;

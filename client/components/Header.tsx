@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import TodoTextInput from './TodoTextInput.tsx';
+import TodoTextInput from './TodoTextInput';
 
 interface HeaderProps {
   addTodo: Function;

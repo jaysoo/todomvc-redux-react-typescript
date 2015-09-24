@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-import TodoTextInput from './TodoTextInput.tsx';
+import TodoTextInput from './TodoTextInput';
 
 type Todo = {
 	id: number;
