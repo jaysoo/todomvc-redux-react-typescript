@@ -12,8 +12,15 @@ Requirement:
 
 - NodeJS 0.12+
 
+Start application:
 
-Install dependencies:
+```
+npm start
+```
+
+Visit [http://localhost:8000/](http://localhost:8000/).
+
+Install dependencies for development:
 
 ```
 npm install
