@@ -8,11 +8,13 @@ module.exports = function(options) {
   var entry;
 
   if (options.development) {
-    entry = [
-      'webpack-dev-server/client?http://0.0.0.0:2992',
-      'webpack/hot/only-dev-server',
-      './todos/index'
-    ];
+    entry = {
+      todos: [
+        'webpack-dev-server/client?http://0.0.0.0:2992',
+        'webpack/hot/only-dev-server',
+        './todos/index'
+      ]
+    };
   } else {
     entry = {
       todos: './todos/index'
@@ -106,7 +108,7 @@ module.exports = function(options) {
     output: {
       path: path.join(__dirname, "..", "build", options.development ? "development" : "public"),
       publicPath: publicPath,
-      filename: "[name].js",
+      filename: options.development ? "[id].js" : "[name].js",
       chunkFilename: "[id].js",
       sourceMapFilename: "debugging/[file].map",
       pathinfo: options.debug
