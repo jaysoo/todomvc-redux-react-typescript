@@ -1,5 +1,4 @@
 var jsdom = require('jsdom');
-var glob = require('glob');
 
 require("babel/register")({
   stage: 0,

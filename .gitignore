@@ -3,6 +3,5 @@ node_modules/
 npm-debug.log
 build/stats-dev.json*
 tmp/
-build/
 dist/
 .sw[a-z]
