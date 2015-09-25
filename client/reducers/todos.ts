@@ -6,6 +6,7 @@ import { handleActions, Action } from 'redux-actions';
 
 import { Todo } from '../models/todos';
 import {
+  LOAD_TODOS,
   ADD_TODO,
   DELETE_TODO,
   EDIT_TODO,
@@ -24,16 +25,28 @@ export const isInitializing = (model: any): model is Initializing => {
 
 export type Model = Initializing | Todo[];
 
-const initialState: Initializing = {progress: 0};
+const initialState: Initializing = {progress: 0}
 
 export default handleActions<Model>({
+  [LOAD_TODOS]: (state: Model, action: Action): Model => {
+    return action.payload;
+  },
+  
   [ADD_TODO]: (state: Model, action: Action): Model => {
-    if (!isInitializing(state)) {
+    let todos: Todo[];
+    
+    if (isInitializing(state)) {
+      // If current state is initializing, set todos to empty array.
+      todos = [];
+    } else {
+      // Otherwise set to current state.
+      todos = state;
+    }
+
     return [{
-      id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
+      id: todos.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
       completed: action.payload.completed,
       text: action.payload.text
-    }, ...state];
-    }
+    }, ...todos];
   }
 }, initialState);

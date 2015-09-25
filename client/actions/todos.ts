@@ -7,6 +7,11 @@ import { assign } from 'lodash';
 import { Todo } from '../models/todos';
 import * as types from '../constants/ActionTypes';
 
+const loadTodos = createAction<Todo[]>(
+  types.LOAD_TODOS,
+  () => [{id: 0, text: 'Use Redux with TypeScript', completed: false}]
+);
+
 const addTodo = createAction<Todo>(
   types.ADD_TODO,
   (text: string) => ({ text, completed: false })
@@ -38,6 +43,7 @@ const clearCompleted = createAction<void>(
 );
 
 export {
+  loadTodos,
   addTodo,
   deleteTodo,
   editTodo,

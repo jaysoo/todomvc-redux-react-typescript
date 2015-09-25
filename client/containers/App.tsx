@@ -17,7 +17,9 @@ class App extends React.Component<any, any> {
   componentDidMount() {
     const dispatch = this.props.dispatch;
     const actions = bindActionCreators(TodoActions, dispatch);
-    actions.loadTodos();
+    
+    // This should go inside actions/todos and handled with redux-thunk.
+    setTimeout(() => actions.loadTodos(), 1000);
   }
   
   render() {
