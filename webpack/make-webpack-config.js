@@ -12,19 +12,19 @@ module.exports = function(options) {
       todos: [
         'webpack-dev-server/client?http://0.0.0.0:2992',
         'webpack/hot/only-dev-server',
-        './todos/index'
+        './client/index'
       ]
     };
   } else {
     entry = {
-      todos: './todos/index'
+      todos: './client/index'
     }
   }
 
   var loaders = {
     "js": {
       loaders: options.development ? ["react-hot", "babel-loader?stage=1"] : ["babel-loader?stage=1"],
-      include: path.join(__dirname, "..", "todos")
+      include: path.join(__dirname, "..", "client")
     },
     "ts|tsx": {
       loaders: ['ts-loader']

@@ -1,6 +1,6 @@
 var fs = require("fs");
 var path = require("path");
-var html = fs.readFileSync(path.resolve(__dirname, "../todos/index.html"), "utf-8");
+var html = fs.readFileSync(path.resolve(__dirname, "../client/index.html"), "utf-8");
 
 function SimpleRenderer(options) {
   this.html = html
