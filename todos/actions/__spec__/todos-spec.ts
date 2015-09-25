@@ -12,18 +12,30 @@ describe('TodoActions', () => {
   });
   
   it('deletes todo', () => {
-    const { payload: todo } = TodoActions.deleteTodo(999);
+    const { payload: todo } = TodoActions.deleteTodo({
+      id: 999,
+      text: '',
+      completed: false
+    });
     
     expect(todo.id).to.eql(999);
   });
   
   it('edits todo', () => {
-    const { payload: todo } = TodoActions.editTodo(999, 'bye');
-    expect(todo).to.eql({ id: 999, text: 'bye'});
+    const { payload: todo } = TodoActions.editTodo({
+      id: 999,
+      text: 'hi',
+      completed: false
+    }, 'bye');
+    expect(todo).to.eql({ id: 999, text: 'bye', completed: false});
   });
   
   it('completes todo', () => {
-    const { payload: todo } = TodoActions.completeTodo(999);
+    const { payload: todo } = TodoActions.completeTodo({
+      id: 999,
+      text: '',
+      completed: false
+    });
     
     expect(todo.id).to.eql(999);
   });

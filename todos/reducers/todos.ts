@@ -14,51 +14,51 @@ import {
   CLEAR_COMPLETED
 } from '../constants/ActionTypes';
 
-const initialState = [{
+const initialState = [<Todo>{
   text: 'Use Redux with TypeScript',
   completed: false,
   id: 0
 }];
 
 export default handleActions<Todo[]>({
-  [ADD_TODO]: (state: Todo[], action: Action) => {
+  [ADD_TODO]: (state: Todo[], action: Action): Todo[] => {
     return [{
       id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
-      completed: false,
+      completed: action.payload.completed,
       text: action.payload.text
     }, ...state];
   },
   
-  [DELETE_TODO]: (state: Todo[], action: Action) => {
+  [DELETE_TODO]: (state: Todo[], action: Action): Todo[] => {
     return state.filter(todo =>
       todo.id !== action.payload.id
     );
   },
   
-  [EDIT_TODO]: (state: Todo[], action: Action) => {
-    return state.map(todo =>
-      todo.id === action.payload.id ?
-        assign({}, todo, { text: action.payload.text }) :
-        todo
+  [EDIT_TODO]: (state: Todo[], action: Action): Todo[] => {
+    return <Todo[]>state.map(todo =>
+      todo.id === action.payload.id
+        ? assign(<Todo>{}, todo, { text: action.payload.text })
+        : todo
     );
   },
   
-  [COMPLETE_TODO]: (state: Todo[], action: Action) => {
-    return state.map(todo =>
+  [COMPLETE_TODO]: (state: Todo[], action: Action): Todo[] => {
+    return <Todo[]>state.map(todo =>
       todo.id === action.payload.id ?
         assign({}, todo, { completed: !todo.completed }) :
         todo
     );
   },
   
-  [COMPLETE_ALL]: (state: Todo[], action: Action) => {
+  [COMPLETE_ALL]: (state: Todo[], action: Action): Todo[] => {
     const areAllMarked = state.every(todo => todo.completed);
-    return state.map(todo => assign({}, todo, {
+    return <Todo[]>state.map(todo => assign({}, todo, {
       completed: !areAllMarked
     }));
   },
 
-  [CLEAR_COMPLETED]: (state: Todo[], action: Action) => {
+  [CLEAR_COMPLETED]: (state: Todo[], action: Action): Todo[] => {
     return state.filter(todo => todo.completed === false);
   }
 }, initialState);
