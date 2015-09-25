@@ -17,7 +17,7 @@ class App extends React.Component<any, any> {
   componentDidMount() {
     const dispatch = this.props.dispatch;
     const actions = bindActionCreators(TodoActions, dispatch);
-    // actions.loadTodos();
+    actions.loadTodos();
   }
   
   render() {
