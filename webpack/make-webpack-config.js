@@ -27,7 +27,7 @@ module.exports = function(options) {
       include: path.join(__dirname, "..", "client")
     },
     "ts|tsx": {
-      loaders: ['ts-loader']
+      loaders: ['react-hot', 'ts-loader']
     }
   };
 
