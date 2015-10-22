@@ -6,6 +6,8 @@ This is an example of [TodoMVC](http://todomvc.com/) built using:
 
 It is adapted from the [redux TodoMVC example](https://github.com/rackt/redux/tree/master/examples/todomvc).
 
+Read more about it in my blog post: http://jaysoo.ca/2015/09/26/typed-react-and-redux/
+
 ## Getting Started
 
 Requirement:
