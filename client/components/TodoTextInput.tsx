@@ -2,7 +2,7 @@
 /// <reference path='../../typings/classnames/classnames.d.ts'/>
 
 import * as React from 'react';
-import * as classNames from 'classnames';
+import classNames from 'classnames';
 
 interface TodoTextInputProps {
   onSave: Function;

@@ -1,9 +1,12 @@
 /// <reference path='../typings/react/react.d.ts'/>
+/// <reference path='../typings/react-dom/react-dom.d.ts'/>
 /// <reference path='../typings/redux-actions/redux-actions.d.ts'/>
 /// <reference path='../typings/redux/redux.d.ts'/>
 /// <reference path='../typings/react-redux/react-redux.d.ts'/>
 
 import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import '../src-scss/main.css!';
 
 import {
   Store,
@@ -18,18 +21,16 @@ import {
 } from 'react-redux';
 import { Action } from 'redux-actions';
 
-import App from './containers/App.tsx';
-import { rootReducer } from './reducers/rootReducer.ts';
+import App from './containers/App';
+import { rootReducer } from './reducers/rootReducer';
 
-const initialState = {
-};
+const initialState = {};
 
 const store: Store = createStore(rootReducer, initialState);
 
-React.render(
+ReactDOM.render(
   <Provider store={store}>
-    {() => <App />}
+    <App />
   </Provider>,
   document.getElementById('app')
 );
-
