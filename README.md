@@ -1,4 +1,4 @@
-This is an example of [TodoMVC](http://todomvc.com/) built using:
+This is an implementation of [TodoMVC](http://todomvc.com/) built using:
 
 - [React](http://facebook.github.io/react/) 0.14.6
 - [Redux](https://github.com/rackt/redux) 3.0.4
