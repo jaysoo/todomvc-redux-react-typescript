@@ -1,6 +1,3 @@
-/// <reference path='../../typings/lodash/lodash.d.ts'/>
-/// <reference path='../../typings/redux-actions/redux-actions.d.ts'/>
-
 import { assign } from 'lodash';
 import { handleActions, Action } from 'redux-actions';
 
@@ -28,13 +25,13 @@ export default handleActions<Todo[]>({
       text: action.payload.text
     }, ...state];
   },
-  
+
   [DELETE_TODO]: (state: Todo[], action: Action): Todo[] => {
     return state.filter(todo =>
       todo.id !== action.payload.id
     );
   },
-  
+
   [EDIT_TODO]: (state: Todo[], action: Action): Todo[] => {
     return <Todo[]>state.map(todo =>
       todo.id === action.payload.id
@@ -42,7 +39,7 @@ export default handleActions<Todo[]>({
         : todo
     );
   },
-  
+
   [COMPLETE_TODO]: (state: Todo[], action: Action): Todo[] => {
     return <Todo[]>state.map(todo =>
       todo.id === action.payload.id ?
@@ -50,7 +47,7 @@ export default handleActions<Todo[]>({
         todo
     );
   },
-  
+
   [COMPLETE_ALL]: (state: Todo[], action: Action): Todo[] => {
     const areAllMarked = state.every(todo => todo.completed);
     return <Todo[]>state.map(todo => assign({}, todo, {
