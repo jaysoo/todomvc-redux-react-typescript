@@ -14,6 +14,12 @@ Requirement:
 
 - NodeJS 4+
 
+Install dependencies:
+
+```
+npm install
+```
+
 Start application:
 
 ```
@@ -22,11 +28,8 @@ npm start
 
 Visit [http://localhost:8000/](http://localhost:8000/).
 
-Install dependencies for development:
-
-```
-npm install
-```
+**Note:** This will run the pre-built JavaScript files, if you want to play around with the source
+you need to run the development server with webpack dev server (See below).
 
 ---
 
