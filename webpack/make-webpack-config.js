@@ -23,7 +23,7 @@ module.exports = function(options) {
 
   var loaders = {
     "js": {
-      loaders: options.development ? ["react-hot", "babel-loader?stage=1"] : ["babel-loader?stage=1"],
+      loaders: options.development ? ["react-hot", "babel-loader"] : ["babel-loader"],
       include: path.join(__dirname, "..", "client")
     },
     "ts|tsx": {

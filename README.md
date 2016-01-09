@@ -12,7 +12,7 @@ Read more about it in my blog post: http://jaysoo.ca/2015/09/26/typed-react-and-
 
 Requirement:
 
-- NodeJS 0.12+
+- NodeJS 4+
 
 Start application:
 

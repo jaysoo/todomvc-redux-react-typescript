@@ -1,10 +1,5 @@
 var jsdom = require('jsdom');
-
-require("babel/register")({
-  stage: 0,
-  optional: ['runtime'],
-  ignore: /node_modules/
-});
+require('babel-polyfill');
 
 ['.wav', '.css', 'sass', '.scss'].forEach(function (ext) {
   require.extensions[ext] = function (module, filename) {

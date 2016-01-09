@@ -1,9 +1,3 @@
-require("babel/register")({
-  stage: 1,
-  optional: ['runtime'],
-  ignore: /node_modules/
-});
-
 var path = require('path');
 var express = require('express');
 var http = require('http');

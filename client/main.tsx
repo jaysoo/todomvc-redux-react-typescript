@@ -1,12 +1,11 @@
 /// <reference path='../typings/react/react.d.ts'/>
-/// <reference path='../typings/react-dom/react-dom.d.ts'/>
+/// <reference path='../typings/react/react-dom.d.ts'/>
 /// <reference path='../typings/redux-actions/redux-actions.d.ts'/>
 /// <reference path='../typings/redux/redux.d.ts'/>
 /// <reference path='../typings/react-redux/react-redux.d.ts'/>
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import '../src-scss/main.css!';
 
 import {
   Store,
