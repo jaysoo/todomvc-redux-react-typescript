@@ -1,8 +1,8 @@
 This is an example of [TodoMVC](http://todomvc.com/) built using:
 
-- [React](http://facebook.github.io/react/)
-- [Redux](https://github.com/rackt/redux)
-- [TypeScript](http://www.typescriptlang.org/)
+- [React](http://facebook.github.io/react/) 0.14.6
+- [Redux](https://github.com/rackt/redux) 3.0.4
+- [TypeScript](http://www.typescriptlang.org/) 1.7.5
 
 It is adapted from the [redux TodoMVC example](https://github.com/rackt/redux/tree/master/examples/todomvc).
 
