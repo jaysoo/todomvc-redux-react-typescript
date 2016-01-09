@@ -1,0 +1,33 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "assertion-error/assertion-error.d.ts": {
+      "commit": "ba257a9b91bc0de1bdd9091b6723194c905a902a"
+    },
+    "mocha/mocha.d.ts": {
+      "commit": "ba257a9b91bc0de1bdd9091b6723194c905a902a"
+    },
+    "classnames/classnames.d.ts": {
+      "commit": "ba257a9b91bc0de1bdd9091b6723194c905a902a"
+    },
+    "react-redux/react-redux.d.ts": {
+      "commit": "ba257a9b91bc0de1bdd9091b6723194c905a902a"
+    },
+    "redux/redux.d.ts": {
+      "commit": "ba257a9b91bc0de1bdd9091b6723194c905a902a"
+    },
+    "lodash/lodash.d.ts": {
+      "commit": "ba257a9b91bc0de1bdd9091b6723194c905a902a"
+    },
+    "react/react.d.ts": {
+      "commit": "ba257a9b91bc0de1bdd9091b6723194c905a902a"
+    },
+    "redux-actions/redux-actions.d.ts": {
+      "commit": "ba257a9b91bc0de1bdd9091b6723194c905a902a"
+    }
+  }
+}

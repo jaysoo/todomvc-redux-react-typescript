@@ -12,21 +12,14 @@ declare module ReduxActions {
         meta?: any
     };
 
-    interface PayloadCreator<T> {
-        (...args: any[]): T
-    }
-    
-    interface MetaCreator {
-        (...args: any[]): any
-    }
+    type PayloadCreator<T> = (...args: any[]) => T;
+    type MetaCreator = (...args: any[]) => any;
 
-    interface Reducer<T> {
-        (state: T, action: Action): T
-    }
+    type Reducer<T> = (state: T, action: Action) => T;
 
-    interface ReducerMap<T> {
+    type ReducerMap<T> = {
         [actionType: string]: Reducer<T>
-    }
+    };
 
     export function createAction<T>(actionType: string, payloadCreator?: PayloadCreator<T>, metaCreator?: MetaCreator): (...args: any[]) => Action;
 
