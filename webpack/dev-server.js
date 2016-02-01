@@ -4,7 +4,7 @@ var config = require("./make-webpack-config")({
   development: true,
   // Set to true to enable redux dev panel.
   devPanel: false,
-  devtool: "eval",
+  devtool: "source-map",
   debug: true
 });
 

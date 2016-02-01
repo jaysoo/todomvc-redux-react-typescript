@@ -4,6 +4,7 @@
     "module": "commonjs",
     "target": "es5",
     "jsx": "react",
+    "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "outDir": "dist"
