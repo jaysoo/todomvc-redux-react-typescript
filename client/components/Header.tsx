@@ -6,7 +6,7 @@ interface HeaderProps {
   addTodo: Function;
 };
 
-class Header extends React.Component<HeaderProps, any> {
+class Header extends React.Component<HeaderProps, void> {
   handleSave(text) {
     if (text.length !== 0) {
       this.props.addTodo(text);
