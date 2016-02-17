@@ -8,8 +8,11 @@ interface TodoTextInputProps {
   editing?: boolean;
   newTodo?: boolean;
 }
+interface TodoTextInputState {
+  text: string;
+}
 
-class TodoTextInput extends React.Component<TodoTextInputProps, any> {
+class TodoTextInput extends React.Component<TodoTextInputProps, TodoTextInputState> {
   constructor(props, context) {
     super(props, context);
     this.state = {

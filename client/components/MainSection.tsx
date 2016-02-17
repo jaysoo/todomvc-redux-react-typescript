@@ -19,8 +19,11 @@ interface MainSectionProps {
   todos: Todo[];
   actions: any;
 };
+interface MainSectionState {
+  filter: string;
+};
 
-class MainSection extends React.Component<MainSectionProps, any> {
+class MainSection extends React.Component<MainSectionProps, MainSectionState> {
   constructor(props, context) {
     super(props, context);
     this.state = { filter: SHOW_ALL };

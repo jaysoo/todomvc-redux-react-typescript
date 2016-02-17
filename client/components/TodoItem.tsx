@@ -11,8 +11,11 @@ interface TodoItemProps {
   completeTodo: Function;
   key?: any;
 }
+interface TodoItemState {
+  editing: boolean;
+};
 
-class TodoItem extends React.Component<TodoItemProps, any> {
+class TodoItem extends React.Component<TodoItemProps, TodoItemState> {
   constructor(props, context) {
     super(props, context);
     this.state = {
