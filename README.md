@@ -21,8 +21,7 @@ Install dependencies:
 ```
 npm install
 ```
-
-Start application:
+## Running production server
 
 ```
 npm start
@@ -40,28 +39,11 @@ you need to run the development server with webpack dev server (See below).
 Run webpack dev server (for assets):
 
 ```
-npm run dev-server
+npm run start:dev
 ```
 
-Run server:
+Visit [http://localhost:8000/](http://localhost:8000/).
 
-```
-npm run start-dev
-```
-
-## Running production server
-
-Build assets:
-
-```
-npm run build
-```
-
-Run server:
-
-```
-npm start
-```
 
 ### Testing
 
