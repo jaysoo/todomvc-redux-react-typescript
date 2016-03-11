@@ -15,14 +15,14 @@ interface AppProps {
 class App extends React.Component<AppProps, void> {
   render() {
     const { todos, dispatch } = this.props;
-    const actions = bindActionCreators(TodoActions, dispatch);
 
     return (
       <div className="todoapp">
-        <Header addTodo={actions.addTodo} />
+        <Header addTodo={(text: string) => dispatch(TodoActions.addTodo(text))} />
         <MainSection
-          todos={todos}
-          actions={actions}/>
+            todos={todos}
+            clearCompleted={() => dispatch(TodoActions.clearCompleted())}
+            clearAll={() => dispatch(TodoActions.clearAll())}/>
       </div>
     );
   }

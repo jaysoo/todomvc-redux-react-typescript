@@ -3,11 +3,11 @@ import * as React from 'react';
 import TodoTextInput from './TodoTextInput';
 
 interface HeaderProps {
-  addTodo: Function;
+  addTodo: (string)=> any;
 };
 
 class Header extends React.Component<HeaderProps, void> {
-  handleSave(text) {
+  handleSave(text: string) {
     if (text.length !== 0) {
       this.props.addTodo(text);
     }

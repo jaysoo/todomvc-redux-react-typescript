@@ -17,7 +17,8 @@ const TODO_FILTERS = {
 
 interface MainSectionProps {
   todos: Todo[];
-  actions: any;
+  clearCompleted: Function;
+  clearAll: Function;
 };
 interface MainSectionState {
   filter: string;
@@ -32,7 +33,7 @@ class MainSection extends React.Component<MainSectionProps, MainSectionState> {
   handleClearCompleted() {
     const atLeastOneCompleted = this.props.todos.some(todo => todo.completed);
     if (atLeastOneCompleted) {
-      this.props.actions.clearCompleted();
+      this.props.clearCompleted();
     }
   }
 
@@ -41,13 +42,13 @@ class MainSection extends React.Component<MainSectionProps, MainSectionState> {
   }
 
   renderToggleAll(completedCount) {
-    const { todos, actions } = this.props;
+    const { todos, completeAll } = this.props;
     if (todos.length > 0) {
       return (
         <input className="toggle-all"
                type="checkbox"
                checked={completedCount === todos.length}
-               onChange={() => actions.completeAll()} />
+               onChange={() => completeAll()} />
       );
     }
   }
