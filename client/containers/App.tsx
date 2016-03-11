@@ -1,4 +1,4 @@
-import { bindActionCreators, Dispatch } from 'redux';
+import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import * as React from 'react';
 
@@ -21,8 +21,11 @@ class App extends React.Component<AppProps, void> {
         <Header addTodo={(text: string) => dispatch(TodoActions.addTodo(text))} />
         <MainSection
             todos={todos}
+            editTodo={(t: Todo, s: string) => dispatch(TodoActions.editTodo(t, s))}
+            deleteTodo={(t: Todo) => dispatch(TodoActions.deleteTodo(t))}
+            completeTodo={(t: Todo) => dispatch(TodoActions.completeTodo(t))}
             clearCompleted={() => dispatch(TodoActions.clearCompleted())}
-            clearAll={() => dispatch(TodoActions.clearAll())}/>
+            completeAll={() => dispatch(TodoActions.completeAll())}/>
       </div>
     );
   }

@@ -18,7 +18,10 @@ const TODO_FILTERS = {
 interface MainSectionProps {
   todos: Todo[];
   clearCompleted: Function;
-  clearAll: Function;
+  completeAll: Function;
+  editTodo: Function;
+  completeTodo: Function;
+  deleteTodo: Function;
 };
 interface MainSectionState {
   filter: string;
@@ -70,7 +73,7 @@ class MainSection extends React.Component<MainSectionProps, MainSectionState> {
   }
 
   render() {
-    const { todos, actions } = this.props;
+    const { todos, completeTodo, deleteTodo, editTodo } = this.props;
     const { filter } = this.state;
 
     const filteredTodos = todos.filter(TODO_FILTERS[filter]);
@@ -87,7 +90,9 @@ class MainSection extends React.Component<MainSectionProps, MainSectionState> {
             <TodoItem
               key={todo.id}
               todo={todo}
-              { ...actions }/>
+              editTodo={editTodo}
+              completeTodo={completeTodo}
+              deleteTodo={deleteTodo}/>
           )}
         </ul>
         {this.renderFooter(completedCount)}
