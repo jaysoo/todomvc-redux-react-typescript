@@ -7,7 +7,6 @@ import {
   Store,
   compose,
   createStore,
-  bindActionCreators,
   combineReducers
 } from 'redux';
 import {
