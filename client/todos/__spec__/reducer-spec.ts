@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 
 import { Todo } from '../../models/todos';
-import todos from '../todos';
+import todos from '../model';
 
 import {
   ADD_TODO,

@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-import * as TodoActions from '../todos';
+import * as TodoActions from '../reducer';
 
 describe('TodoActions', () => {
   it('creates new todo', () => {

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Todo } from '../models/todos';
+import { Todo } from '../model';
 import TodoItem from './TodoItem';
 import Footer from './Footer';
 import {
