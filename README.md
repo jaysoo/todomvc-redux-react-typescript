@@ -2,9 +2,9 @@
 
 This is an implementation of [TodoMVC](http://todomvc.com/) built using:
 
-- [React](http://facebook.github.io/react/) 0.14.6
-- [Redux](https://github.com/rackt/redux) 3.0.4
-- [TypeScript](http://www.typescriptlang.org/) 1.7.5
+- [React & ReactDOM](http://facebook.github.io/react/) 0.14.7
+- [Redux](https://github.com/rackt/redux) 3.0.6
+- [TypeScript](http://www.typescriptlang.org/) 1.8.9
 
 It is adapted from the [redux TodoMVC example](https://github.com/rackt/redux/tree/master/examples/todomvc).
 
