@@ -1,26 +1,14 @@
-/// <reference path='../typings/tsd.d.ts'/>
-
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-
-import {
-  Store,
-  compose,
-  createStore,
-  combineReducers
-} from 'redux';
-import {
-  connect,
-  Provider
-} from 'react-redux';
-import { Action } from 'redux-actions';
+import { IStore, createStore } from 'redux';
+import { Provider } from 'react-redux';
 
 import App from './containers/App';
 import { rootReducer } from './reducers/rootReducer';
 
 const initialState = {};
 
-const store: Store = createStore(rootReducer, initialState);
+const store: IStore<any> = createStore(rootReducer, initialState);
 
 ReactDOM.render(
   <Provider store={store}>

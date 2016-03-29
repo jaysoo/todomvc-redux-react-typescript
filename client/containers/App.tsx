@@ -1,4 +1,4 @@
-import { Dispatch } from 'redux';
+import { IDispatch } from 'redux';
 import { connect } from 'react-redux';
 import * as React from 'react';
 
@@ -9,7 +9,7 @@ import { Todo } from '../models/todos';
 
 interface AppProps {
   todos: Todo[];
-  dispatch: Dispatch;
+  dispatch: IDispatch;
 }
 
 class App extends React.Component<AppProps, void> {

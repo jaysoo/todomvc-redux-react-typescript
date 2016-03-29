@@ -1,5 +1,5 @@
 {
-  "version": "1.7.6",
+  "version": "1.8.9",
   "compilerOptions": {
     "module": "commonjs",
     "target": "es5",
@@ -9,6 +9,9 @@
     "experimentalDecorators": true,
     "outDir": "dist"
   },
+  "files": [
+    "typings/main.d.ts"
+  ],
   "exclude": [
     "dist",
     "node_modules"

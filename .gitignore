@@ -1,6 +1,7 @@
 .vscode/
 .idea/
 node_modules/
+typings/
 npm-debug.log
 build/stats-dev.json*
 tmp/
