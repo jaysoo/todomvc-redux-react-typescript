@@ -10,6 +10,7 @@
     "redux-actions": "github:DefinitelyTyped/DefinitelyTyped/redux-actions/redux-actions.d.ts#ba257a9b91bc0de1bdd9091b6723194c905a902a"
   },
   "dependencies": {
+    "chai": "registry:npm/chai#3.5.0+20160328084239",
     "lodash": "registry:npm/lodash#4.0.0+20160305082308",
     "react-redux": "registry:npm/react-redux#4.4.0+20160207114942",
     "redux": "registry:npm/redux#3.0.6+20160214194820"

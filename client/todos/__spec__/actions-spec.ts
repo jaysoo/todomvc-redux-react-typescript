@@ -1,16 +1,16 @@
 import { expect } from 'chai';
 
-import * as TodoActions from '../reducer';
+import * as actions from '../actions';
 
-describe('TodoActions', () => {
+describe('actions', () => {
   it('creates new todo', () => {
-    const { payload: todo } = TodoActions.addTodo('hello');
+    const { payload: todo } = actions.addTodo('hello');
 
     expect(todo.text).to.eql('hello');
   });
 
   it('deletes todo', () => {
-    const { payload: todo } = TodoActions.deleteTodo({
+    const { payload: todo } = actions.deleteTodo({
       id: 999,
       text: '',
       completed: false
@@ -20,7 +20,7 @@ describe('TodoActions', () => {
   });
 
   it('edits todo', () => {
-    const { payload: todo } = TodoActions.editTodo({
+    const { payload: todo } = actions.editTodo({
       id: 999,
       text: 'hi',
       completed: false
@@ -29,7 +29,7 @@ describe('TodoActions', () => {
   });
 
   it('completes todo', () => {
-    const { payload: todo } = TodoActions.completeTodo({
+    const { payload: todo } = actions.completeTodo({
       id: 999,
       text: '',
       completed: false

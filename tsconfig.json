@@ -9,11 +9,9 @@
     "experimentalDecorators": true,
     "outDir": "dist"
   },
-  "files": [
-    "typings/main.d.ts"
-  ],
   "exclude": [
     "dist",
-    "node_modules"
+    "node_modules",
+    "typings"
   ]
 }

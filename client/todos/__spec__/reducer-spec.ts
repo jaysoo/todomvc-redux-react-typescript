@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 
-import { Todo } from '../../models/todos';
-import todos from '../model';
+import reducer from '../reducer';
+import { Todo } from '../model';
 
 import {
   ADD_TODO,
@@ -10,13 +10,13 @@ import {
   COMPLETE_TODO,
   COMPLETE_ALL,
   CLEAR_COMPLETED
-} from '../../constants/ActionTypes';
+} from '../actions';
 
 describe('todo reducer', () => {
   it('handles add', () => {
     let state: Todo[] = [{ id: 0, text: '', completed: true }];
 
-    state = todos(state, {
+    state = reducer(state, {
       type: ADD_TODO,
       payload: { text: 'hello', completed: false }
     });
@@ -29,7 +29,7 @@ describe('todo reducer', () => {
   it('handles delete', () => {
     let state: Todo[] = [{ id: 1, text: '', completed: false }];
 
-    state = todos(state, {
+    state = reducer(state, {
       type: DELETE_TODO,
       payload: { id: 1 }
     });
@@ -40,7 +40,7 @@ describe('todo reducer', () => {
   it('handles edit', () => {
     let state: Todo[] = [{ id: 1, text: '', completed: false }];
 
-    state = todos(state, {
+    state = reducer(state, {
       type: EDIT_TODO,
       payload: { id: 1, text: 'hello' }
     });
@@ -56,7 +56,7 @@ describe('todo reducer', () => {
       { id: 1, text: '', completed: false }
     ];
 
-    state = todos(state, {
+    state = reducer(state, {
       type: COMPLETE_TODO,
       payload: { id: 1 }
     });
@@ -73,7 +73,7 @@ describe('todo reducer', () => {
       { id: 3, text: '', completed: false }
     ];
 
-    state = todos(state, {
+    state = reducer(state, {
       type: COMPLETE_ALL,
       payload: {}
     });
@@ -84,7 +84,7 @@ describe('todo reducer', () => {
       { id: 3, text: '', completed: true }
     ]);
 
-    state = todos(state, {
+    state = reducer(state, {
       type: COMPLETE_ALL,
       payload: {}
     });
@@ -102,7 +102,7 @@ describe('todo reducer', () => {
       { id: 2, text: '', completed: true }
     ];
 
-    state = todos(state, {
+    state = reducer(state, {
       type: CLEAR_COMPLETED,
       payload: {}
     });
