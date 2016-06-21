@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as classNames from 'classnames';
 
 interface TodoTextInputProps {
-  onSave: Function;
+  onSave: (text:string)=>void;
   text?: string;
   placeholder?: string,
   editing?: boolean;

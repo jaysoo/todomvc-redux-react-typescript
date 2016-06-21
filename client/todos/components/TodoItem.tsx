@@ -6,9 +6,9 @@ import TodoTextInput from './TodoTextInput';
 
 interface TodoItemProps {
   todo: Todo;
-  editTodo: Function;
-  deleteTodo: Function;
-  completeTodo: Function;
+  editTodo: (todo:Todo, text:string)=>void;
+  deleteTodo: (todo:Todo)=>void;
+  completeTodo: (todo:Todo)=>void;
   key?: any;
 }
 interface TodoItemState {
@@ -27,7 +27,7 @@ class TodoItem extends React.Component<TodoItemProps, TodoItemState> {
     this.setState({ editing: true });
   }
 
-  handleSave(todo, text) {
+  handleSave(todo:Todo, text:string) {
     if (text.length === 0) {
       this.props.deleteTodo(todo);
     } else {

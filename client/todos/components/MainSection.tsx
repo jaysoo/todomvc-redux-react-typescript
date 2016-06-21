@@ -17,11 +17,11 @@ const TODO_FILTERS = {
 
 interface MainSectionProps {
   todos: Todo[];
-  clearCompleted: Function;
-  completeAll: Function;
-  editTodo: Function;
-  completeTodo: Function;
-  deleteTodo: Function;
+  clearCompleted: ()=>void;
+  completeAll: ()=>void;
+  editTodo: (todo:Todo, text:string)=>void;
+  completeTodo: (todo:Todo)=>void;
+  deleteTodo: (todo:Todo)=>void;
 };
 interface MainSectionState {
   filter: string;

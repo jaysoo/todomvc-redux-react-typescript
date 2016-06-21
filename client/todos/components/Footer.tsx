@@ -18,8 +18,8 @@ interface FooterProps {
   completedCount: number;
   activeCount: number;
   filter: string;
-  onClearCompleted: Function;
-  onShow: Function;
+  onClearCompleted: ()=>void;
+  onShow: (filter:string)=>void;
 }
 
 class Footer extends React.Component<FooterProps, void> {

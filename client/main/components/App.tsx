@@ -28,7 +28,7 @@ class App extends React.Component<AppProps, void> {
         <Header addTodo={(text: string) => dispatch(addTodo(text))} />
         <MainSection
             todos={todos}
-            editTodo={(t: model.Todo, s: string) => dispatch(editTodo(t, s))}
+            editTodo={(t,s) => dispatch(editTodo(t, s))}
             deleteTodo={(t: model.Todo) => dispatch(deleteTodo(t))}
             completeTodo={(t: model.Todo) => dispatch(completeTodo(t))}
             clearCompleted={() => dispatch(clearCompleted())}
