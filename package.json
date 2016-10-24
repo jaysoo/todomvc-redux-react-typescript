@@ -29,6 +29,7 @@
     "redux-actions": "0.8.0",
     "serve-static": "1.10.0",
     "todomvc-app-css": "2.0.1",
+    "typescript": "2.0.3",
     "yargs": "3.29.0"
   },
   "devDependencies": {
