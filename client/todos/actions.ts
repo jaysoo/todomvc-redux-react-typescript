@@ -10,34 +10,34 @@ export const COMPLETE_TODO = 'COMPLETE_TODO';
 export const COMPLETE_ALL = 'COMPLETE_ALL';
 export const CLEAR_COMPLETED = 'CLEAR_COMPLETED';
 
-const addTodo = createAction<Todo>(
+const addTodo = createAction<Todo, string>(
   ADD_TODO,
   (text: string) => ({ text, completed: false })
 );
 
-const deleteTodo = createAction<Todo>(
+const deleteTodo = createAction<Todo, Todo>(
   DELETE_TODO,
   (todo: Todo) => todo
 );
 
-const editTodo = createAction<Todo>(
+const editTodo = createAction<Todo, Todo, string>(
   EDIT_TODO,
-  (todo: Todo, newText: string) => <Todo>assign(todo, {text: newText})
+  (todo: Todo, newText: string) => <Todo>assign(todo, { text: newText })
 );
 
-const completeTodo = createAction<Todo>(
+const completeTodo = createAction<Todo, Todo>(
   COMPLETE_TODO,
   (todo: Todo) => todo
 )
 
 const completeAll = createAction<void>(
   COMPLETE_ALL,
-  () => {}
+  () => { }
 )
 
 const clearCompleted = createAction<void>(
   CLEAR_COMPLETED,
-  () => {}
+  () => { }
 );
 
 export {
