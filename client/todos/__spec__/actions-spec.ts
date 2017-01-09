@@ -1,3 +1,5 @@
+/// <reference path="./../../../node_modules/@types/mocha/index.d.ts" />
+
 import { expect } from 'chai';
 
 import * as actions from '../actions';

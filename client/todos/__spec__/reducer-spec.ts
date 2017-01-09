@@ -1,3 +1,5 @@
+/// <reference path="./../../../node_modules/@types/mocha/index.d.ts" />
+
 import { expect } from 'chai';
 
 import reducer from '../reducer';
@@ -31,7 +33,7 @@ describe('todo reducer', () => {
 
     state = reducer(state, {
       type: DELETE_TODO,
-      payload: { id: 1 }
+      payload: { id: 1 } as Todo
     });
 
     expect(state).to.eql([]);
@@ -42,7 +44,7 @@ describe('todo reducer', () => {
 
     state = reducer(state, {
       type: EDIT_TODO,
-      payload: { id: 1, text: 'hello' }
+      payload: { id: 1, text: 'hello' } as Todo
     });
 
     expect(state[0]).to.eql(
@@ -58,7 +60,7 @@ describe('todo reducer', () => {
 
     state = reducer(state, {
       type: COMPLETE_TODO,
-      payload: { id: 1 }
+      payload: { id: 1 } as Todo
     });
 
     expect(state[0]).to.eql(
@@ -75,7 +77,7 @@ describe('todo reducer', () => {
 
     state = reducer(state, {
       type: COMPLETE_ALL,
-      payload: {}
+      payload: {} as Todo
     });
 
     expect(state).to.eql([
@@ -86,7 +88,7 @@ describe('todo reducer', () => {
 
     state = reducer(state, {
       type: COMPLETE_ALL,
-      payload: {}
+      payload: {} as Todo
     });
 
     expect(state).to.eql([
@@ -104,7 +106,7 @@ describe('todo reducer', () => {
 
     state = reducer(state, {
       type: CLEAR_COMPLETED,
-      payload: {}
+      payload: {} as Todo
     });
 
     expect(state).to.eql([
