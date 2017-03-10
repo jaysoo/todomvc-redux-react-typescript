@@ -10,8 +10,7 @@ var config = require("./make-webpack-config")({
 
 new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
-  colors: true,
-  progress: true,
+  stats: { colors: true },
   hot: true,
   historyApiFallback: true
 }).listen(2992, 'localhost', function (err, result) {
