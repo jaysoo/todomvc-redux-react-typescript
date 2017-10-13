@@ -1,4 +1,3 @@
-import { assign } from 'lodash';
 import { handleActions, Action } from 'redux-actions';
 
 import { Todo, IState } from './model';
@@ -35,7 +34,7 @@ export default handleActions<IState, Todo>({
   [EDIT_TODO]: (state: IState, action: Action<Todo>): IState => {
     return <IState>state.map(todo =>
       todo.id === action.payload.id
-        ? assign(<Todo>{}, todo, { text: action.payload.text })
+        ? { ...todo, text: action.payload.text }
         : todo
     );
   },
@@ -43,14 +42,14 @@ export default handleActions<IState, Todo>({
   [COMPLETE_TODO]: (state: IState, action: Action<Todo>): IState => {
     return <IState>state.map(todo =>
       todo.id === action.payload.id ?
-        assign({}, todo, { completed: !todo.completed }) :
+        { ...todo, completed: !todo.completed } :
         todo
     );
   },
 
   [COMPLETE_ALL]: (state: IState, action: Action<Todo>): IState => {
     const areAllMarked = state.every(todo => todo.completed);
-    return <IState>state.map(todo => assign({}, todo, {
+    return <IState>state.map(todo => ({ ...todo,
       completed: !areAllMarked
     }));
   },
