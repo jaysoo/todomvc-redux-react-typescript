@@ -19,7 +19,7 @@ interface AppProps {
   dispatch: Dispatch<{}>;
 }
 
-class App extends React.Component<AppProps, void> {
+class App extends React.Component<AppProps> {
   render() {
     const { todos, dispatch } = this.props;
 

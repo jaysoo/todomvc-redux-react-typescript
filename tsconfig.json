@@ -1,5 +1,5 @@
 {
-  "version": "2.2.1",
+  "version": "2.5.3",
   "compilerOptions": {
     "module": "commonjs",
     "target": "es5",
@@ -7,6 +7,7 @@
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "strictNullChecks": false,
     "outDir": "dist"
   },
   "exclude": [

@@ -22,7 +22,7 @@ interface FooterProps {
   onShow: (filter:string)=>void;
 }
 
-class Footer extends React.Component<FooterProps, void> {
+class Footer extends React.Component<FooterProps> {
   renderTodoCount() {
     const { activeCount } = this.props;
     const itemWord = activeCount === 1 ? 'item' : 'items';
